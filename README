@@ -1,0 +1,11 @@
+CSE3421_Project README
+
+This project contains the following classes:
+
+	Proof_Of_Concept: This will be our "proof-of-concept" program that will demonstrate the functionality of the SAG Language Assembler and SAG CPU
+	SAG_Language_Assembler: This class will handle assembling a SAG Assembly Language program into machine code.
+	SAG_CPU: This class is the actual chip object definition.  It will handle the actual program execution, and contains instances of the following classes as members:
+		Program_Counter: This class defines the program counter object.
+		Register: This class defines the register object.
+		ALU: This class defines the ALU object.
+		Memory: This class defines the main memory of the chip.  
