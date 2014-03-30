@@ -13,6 +13,10 @@ public class Program_Counter {
 	
 	//Methods
 	
+	public int Get_Count(){
+		return this.count;
+	}
+	
 	public void Reset(){
 		this.count = 0;
 	}

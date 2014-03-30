@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class SAG_CPU {
 	
@@ -29,12 +34,27 @@ public class SAG_CPU {
 	
 	// Methods
 	
-	public void Load_Program(){
-		// Load an assembled program into memory
+	public void Load_Program(File program){
+		int i = 0;
+		try(BufferedReader br = new BufferedReader(new FileReader(program))) {
+		    for(String line; (line = br.readLine()) != null; ) {
+		        int instruction = Integer.parseInt(line);
+		        Main_Memory.Store(instruction, i);
+		        i++;
+		    }
+		} catch (FileNotFoundException e) {
+			System.out.println("The file does not exist.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("There was an error opening the file.");
+			e.printStackTrace();
+		}
 	}
 	
 	public void Fetch_Instruction(){
-		// Fetch an instruction
+		Main_Memory.Load(PC.Get_Count());
+		PC.Increment(1);
+		
 	}
 	
 	public void Execute(){
