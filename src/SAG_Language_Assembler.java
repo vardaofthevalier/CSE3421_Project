@@ -89,9 +89,8 @@ public class SAG_Language_Assembler {
 			this.children = new ArrayList<ParseTree>();
 		}
 		
-		public void Insert(String token)
+		public void Insert(ParseTree newChild)
 		{
-			ParseTree newChild = new ParseTree(token);
 			this.children.add(newChild);
 		}
 		
@@ -173,22 +172,38 @@ public class SAG_Language_Assembler {
 					
 					if (isValidIdentifier(nextToken))
 					{
-						program.Insert(nextToken);
+						ParseTree progName = new ParseTree(nextToken);
+						program.Insert(progName);
 					}
 					
 					else
 					{
 						System.out.println("Error: The program identifier is not valid.");
+						System.exit(1);
 						
 					}
 					
 					while (!tokens.isEmpty() && nextToken != "END"){
-						// Recursively descend
+						nextToken = tokens.remove(0);
+						ParseTree nextChild = new ParseTree(nextToken);
+						
+						if (nextToken == "BEGIN"){
+							// Start of routine
+						}
+						else{
+							// Must be an identifier, followed by a value
+							if (isValidIdentifier(nextToken)){
+								program.Insert(nextChild);
+								
+							}
+						}
+						
 					}
 				}
 			}
 			else{
-				// Not a valid program, report error
+				System.out.println("Error: PROGRAM keyword not found.");
+				System.exit(1);
 			}
 		
 		}
