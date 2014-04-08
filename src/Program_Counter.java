@@ -24,5 +24,9 @@ public class Program_Counter {
 	public void Increment(int amt){
 		this.count += amt;
 	}
+	
+	public void Load_Address(int address){
+		this.count = address;
+	}
 
 }

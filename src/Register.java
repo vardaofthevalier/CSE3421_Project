@@ -14,6 +14,11 @@ public class Register {
 	public void Update(int value){
 		this.contents = value;
 	}
+	
+	public int getContents(){
+		return (int) (this.contents);
+	}
+	
 	public void Reset(){
 		this.contents = null;
 	}

@@ -3,6 +3,7 @@ public class Memory {
 	
 	// Member variables
 	
+	
 	private int[] memory_contents;
 
 	
