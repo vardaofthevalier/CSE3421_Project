@@ -49,6 +49,7 @@ public class SAG_CPU {
 			System.out.println("There was an error opening the file.");
 			e.printStackTrace();
 		}
+		Fetch_Instruction();
 	}
 	
 	public void Fetch_Instruction(){
@@ -78,68 +79,164 @@ public class SAG_CPU {
 		String opCodeString = temp.substring(0, 4);
 		
 		int pcReturnValue = -1;
-		
+		String src1, src2, dest;
+		int src1int, src2int, destint;
 		switch(opCodeString){
 		case "0000":
 			//do NOP stuff
 			break;
 		case "0001":
 			//do ADD stuff
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0010":
-			//do sub stuff
+			//do SUB stuff
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0011":
 			//do AND stuff
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0100":
 			//do OR stuff
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0101":
 			//do NOT stuff
+			src1 = temp.substring(4,8);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0110":
-			//do SLL stuff
+			//do SLL stuff, src2 is shift amount
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0111":
-			//do SLR stuff
+			//do SLR stuff, src2 is shift amount
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1000":
 			//do SLF stuff
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1001":
 			//do BEQ stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), destint, 0, 0);
 			break;
 		case "1010":
 			//do BNEQ stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), destint, 0, 0);
 			break;
 		case "1011":
 			//do ADDI stuff
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), src2int, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1100":
 			//do SLTI stuff
+			src1 = temp.substring(4,8);
+			src2 = temp.substring(8,12);
+			dest = temp.substring(12);
+			src1int = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), src2int, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1101":
 			//do LOAD stuff
+			src1 = temp.substring(4,8);
+			dest = temp.substring(8);
+			src1int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1110":
-			//do STORE stuff
+			//do LOAD stuff
+			src1 = temp.substring(4,8);
+			dest = temp.substring(8);
+			src1int = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1111":
 			//do JUMP stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
+			src1 = temp.substring(4);
+			src1int = Integer.parseInt(src1, 2);
+			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, 0, 0, 0);
 			break;
 			
 		}
 		return pcReturnValue;
 	}
 	
-	public void Execute(){
+	public void Execute(String opcode, int src1, int src2, int dest, int immediate, int address){
 		
 	}
 	
