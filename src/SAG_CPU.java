@@ -241,78 +241,91 @@ public class SAG_CPU {
 		switch(opcode){
 		case "0000":
 			//do NOP stuff
-			
+			Program_Counter.Increment(1);
 			break;
 		case "0001":
 			//do ADD stuff
 			GP_Registers[dest].Update(ALU.ADD(src1, src2));
+			Program_Counter.Increment(1);
 			break;
 		case "0010":
 			//do SUB stuff
 			GP_Registers[dest].Update(ALU.SUBTRACT(src1, src2));
+			Program_Counter.Increment(1);
 			break;
 		case "0011":
 			//do AND stuff
 			GP_Registers[dest].Update(ALU.AND(src1, src2));
+			Program_Counter.Increment(1);
 			break;
 		case "0100":
 			//do OR stuff
 			GP_Registers[dest].Update(ALU.OR(src1, src2));
+			Program_Counter.Increment(1);
 			break;
 		case "0101":
 			//do NOT stuff
 			GP_Registers[dest].Update(ALU.NOT(src1));
+			Program_Counter.Increment(1);
 			break;
 		case "0110":
 			//do SLL stuff, src2 is shift amount
 			GP_Registers[dest].Update(ALU.SLL(src1,src2));
+			Program_Counter.Increment(1);
 			break;
 		case "0111":
 			//do SLR stuff, src2 is shift amount
 			GP_Registers[dest].Update(ALU.SLR(src1,src2));
+			Program_Counter.Increment(1);
 			break;
 		case "1000":
 			//do SLT stuff
 			GP_Registers[dest].Update(ALU.SLT(src1,src2));
+			Program_Counter.Increment(1);
 			break;
 		case "1001":
 			//do BEQ stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
 			if(ALU.BEQ(src1,src2) == 1)
-				//update branched PC
+				Program_Counter.Increment(dest);
 			else
-				//increment PC normally
+				Program_Counter.Increment(1);
 			break;
 		case "1010":
 			//do BNEQ stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
 			if(ALU.BNEQ(src1,src2) == 1)
-				//update branched PC
+				Program_Counter.Increment(dest);
 			else
-				//increment PC normally
+				Program_Counter.Increment(1);
 			break;
 		case "1011":
 			//do ADDI stuff
 			GP_Registers[dest].Update(ALU.ADDI(src1, src2));
+			Program_Counter.Increment(1);
 			break;
 		case "1100":
 			//do SLTI stuff
 			GP_Registers[dest].Update(ALU.SLTI(src1,src2));
+			Program_Counter.Increment(1);
 			break;
 		case "1101":
 			//do LOAD stuff
 			GP_Registers[dest].Update(Main_Memory.Load(src1));
+			Program_Counter.Increment(1);
 			break;
 		case "1110":
 			//do STORE stuff
 			Main_Memory.Store(src1,dest);
+			Program_Counter.Increment(1);
 			break;
 		case "1111":
 			//do JUMP stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
+			Program_Counter.Increment(src1);
 			break;
 		
 		}
