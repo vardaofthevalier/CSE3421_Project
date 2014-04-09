@@ -67,13 +67,13 @@ public class ALU {
 	}
 
 	//Immediate Methods
-	public Integer ADDI(int src1, int src2)
+	public Integer ADDI(int src1, int imm)
 	{
-		return src1 + src2;
+		return src1 + imm;
 	}
 	
-	public Integer SLTI(int src1, int src2)
+	public Integer SLTI(int src1, int imm)
 	{
-		return src1 << src2;
+		return src1 << imm;
 	}
 }

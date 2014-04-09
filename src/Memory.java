@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 
 public class Memory {
 	
@@ -27,7 +29,7 @@ public class Memory {
 	
 	public void Reset(){
 		// Clear memory contents
-		Arrays.fill(memory_contents, null);
+		Arrays.fill(memory_contents, 0);
 	}
 	
 

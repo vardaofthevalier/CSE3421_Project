@@ -54,18 +54,18 @@ public class SAG_CPU {
 	
 	public void Fetch_Instruction(){
 		Main_Memory.Load(PC.Get_Count());
-		int newPC = Decode();
-		if(newPC != -1)
-		{
-			PC.Load_Address(newPC);
-		}else{
-			PC.Increment(1);
-		}
+//		int newPC = Decode();
+//		if(newPC != -1)
+//		{
+//			PC.Load_Address(newPC);
+//		}else{
+//			PC.Increment(1);
+//		}
 		
 		
 	}
 	
-	public int Decode(){
+	public void Decode(){
 		//might not work correctly if instruction has leading zeros, as they would be removed due to int to string conversions
 		String temp = Integer.toString(IR.getContents());
 
@@ -234,7 +234,7 @@ public class SAG_CPU {
 			break;
 			
 		}
-		return pcReturnValue;
+//		return pcReturnValue;
 	}
 	
 	public void Execute(String opcode, int src1, int src2, int dest, int immediate, int address){
@@ -288,7 +288,7 @@ public class SAG_CPU {
 			//set new PC address to return
 			//pcReturnValue = newPCValue
 			if(ALU.BEQ(src1,src2) == 1)
-				PC.Increment(dest);
+				PC.Load_Address(dest);
 			else
 				PC.Increment(1);
 			break;
@@ -297,7 +297,7 @@ public class SAG_CPU {
 			//set new PC address to return
 			//pcReturnValue = newPCValue
 			if(ALU.BNEQ(src1,src2) == 1)
-				PC.Increment(dest);
+				PC.Load_Address(dest);
 			else
 				PC.Increment(1);
 			break;
@@ -325,7 +325,7 @@ public class SAG_CPU {
 			//do JUMP stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
-			PC.Increment(src1);
+			PC.Load_Address(src1);
 			break;
 		
 		}
