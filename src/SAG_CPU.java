@@ -12,7 +12,7 @@ public class SAG_CPU {
 	private Register IR;
 	private Register Zero;
 	private Register[] GP_Registers;
-	private Register[] Device_Registers;
+	//private Register[] Device_Registers;
 	private Register Stack_Pointer;
 	private Register Frame_Pointer;
 	private Register Return_Address;
@@ -23,8 +23,8 @@ public class SAG_CPU {
 	public SAG_CPU(){
 		this.PC = new Program_Counter();
 		this.IR = new Register();
-		this.GP_Registers = new Register[7];
-		this.Device_Registers = new Register[4];
+		this.GP_Registers = new Register[11];
+		//this.Device_Registers = new Register[4];
 		this.Stack_Pointer = new Register();
 		this.Frame_Pointer = new Register();
 		this.Return_Address = new Register();
