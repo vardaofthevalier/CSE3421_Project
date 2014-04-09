@@ -188,7 +188,7 @@ public class SAG_Language_Assembler {
 						ParseTree nextChild = new ParseTree(nextToken);
 						
 						if (nextToken == "BEGIN"){
-							// Start of routine
+							// Must be the start of a new routine
 						}
 						else{
 							// Must be an identifier, followed by a value
