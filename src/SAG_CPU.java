@@ -84,6 +84,7 @@ public class SAG_CPU {
 		switch(opCodeString){
 		case "0000":
 			//do NOP stuff
+			Execute(opCodeString, 0, 0, 0, 0, 0);
 			break;
 		case "0001":
 			//do ADD stuff
@@ -154,7 +155,7 @@ public class SAG_CPU {
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1000":
-			//do SLF stuff
+			//do SLT stuff
 			src1 = temp.substring(4,8);
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
@@ -237,7 +238,75 @@ public class SAG_CPU {
 	}
 	
 	public void Execute(String opcode, int src1, int src2, int dest, int immediate, int address){
+		switch(opcode){
+		case "0000":
+			//do NOP stuff
+			
+			break;
+		case "0001":
+			//do ADD stuff
+			GP_Registers[dest].Update(ALU.Add(src1, src2));
+			break;
+		case "0010":
+			//do SUB stuff
+			GP_Registers[dest].Update(ALU.Subtract(src1, src2));
+			break;
+		case "0011":
+			//do AND stuff
+			GP_Registers[dest].Update(ALU.And(src1, src2));
+			break;
+		case "0100":
+			//do OR stuff
+			GP_Registers[dest].Update(ALU.And(src1, src2));
+			break;
+		case "0101":
+			//do NOT stuff
+			GP_Registers[dest].Update(ALU.Not(src1));
+			break;
+		case "0110":
+			//do SLL stuff, src2 is shift amount
+			GP_Registers[dest].Update(ALU.SLL(src1,src2));
+			break;
+		case "0111":
+			//do SLR stuff, src2 is shift amount
+			GP_Registers[dest].Update(ALU.SLR(src1,src2));
+			break;
+		case "1000":
+			//do SLT stuff
+			GP_Registers[dest].Update(ALU.SLT(src1,src2));
+			break;
+		case "1001":
+			//do BEQ stuff
+			//set new PC address to return
+			//pcReturnValue = newPCValue
+			break;
+		case "1010":
+			//do BNEQ stuff
+			//set new PC address to return
+			//pcReturnValue = newPCValue
+			break;
+		case "1011":
+			//do ADDI stuff
+			GP_Registers[dest].Update(ALU.Addi(src1, src2));
+			break;
+		case "1100":
+			//do SLTI stuff
+			GP_Registers[dest].Update(ALU.SLTI(src1,src2));
+			break;
+		case "1101":
+			//do LOAD stuff
+			
+			break;
+		case "1110":
+			//do LOAD stuff
+			break;
+		case "1111":
+			//do JUMP stuff
+			//set new PC address to return
+			//pcReturnValue = newPCValue
+			break;
 		
+		}
 	}
 	
 
