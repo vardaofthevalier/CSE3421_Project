@@ -245,23 +245,23 @@ public class SAG_CPU {
 			break;
 		case "0001":
 			//do ADD stuff
-			GP_Registers[dest].Update(ALU.Add(src1, src2));
+			GP_Registers[dest].Update(ALU.ADD(src1, src2));
 			break;
 		case "0010":
 			//do SUB stuff
-			GP_Registers[dest].Update(ALU.Subtract(src1, src2));
+			GP_Registers[dest].Update(ALU.SUBTRACT(src1, src2));
 			break;
 		case "0011":
 			//do AND stuff
-			GP_Registers[dest].Update(ALU.And(src1, src2));
+			GP_Registers[dest].Update(ALU.AND(src1, src2));
 			break;
 		case "0100":
 			//do OR stuff
-			GP_Registers[dest].Update(ALU.And(src1, src2));
+			GP_Registers[dest].Update(ALU.OR(src1, src2));
 			break;
 		case "0101":
 			//do NOT stuff
-			GP_Registers[dest].Update(ALU.Not(src1));
+			GP_Registers[dest].Update(ALU.NOT(src1));
 			break;
 		case "0110":
 			//do SLL stuff, src2 is shift amount
@@ -279,15 +279,23 @@ public class SAG_CPU {
 			//do BEQ stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
+			if(ALU.BEQ(src1,src2) == 1)
+				//update branched PC
+			else
+				//increment PC normally
 			break;
 		case "1010":
 			//do BNEQ stuff
 			//set new PC address to return
 			//pcReturnValue = newPCValue
+			if(ALU.BNEQ(src1,src2) == 1)
+				//update branched PC
+			else
+				//increment PC normally
 			break;
 		case "1011":
 			//do ADDI stuff
-			GP_Registers[dest].Update(ALU.Addi(src1, src2));
+			GP_Registers[dest].Update(ALU.ADDI(src1, src2));
 			break;
 		case "1100":
 			//do SLTI stuff

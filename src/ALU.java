@@ -7,27 +7,27 @@ public class ALU {
 
 	
 	// Methods
-	public Integer Add(int src1, int src2)
+	public Integer ADD(int src1, int src2)
 	{
 		return src1 + src2;
 	}
 	
-	public Integer Subtract(int src1, int src2)
+	public Integer SUBTRACT(int src1, int src2)
 	{
 		return src1 - src2;
 	}
 	
-	public Integer And(int src1, int src2)
+	public Integer AND(int src1, int src2)
 	{
 		return src1 & src2;
 	}
 	
-	public Integer Or(int src1, int src2)
+	public Integer OR(int src1, int src2)
 	{
 		return src1 | src2;
 	}
 	
-	public Integer Not(int src1)
+	public Integer NOT(int src1)
 	{
 		return ~src1;
 	}
@@ -50,9 +50,24 @@ public class ALU {
 			return 0;
 	}
 	
-	
+	public Integer BEQ(int src1, int src2)
+	{
+		if(src1 == src2)
+			return 1;
+		else
+			return 0;
+	}
+
+	public Integer BNEQ(int src1, int src2)
+	{
+		if(src1 != src2)
+			return 1;
+		else
+			return 0;
+	}
+
 	//Immediate Methods
-	public Integer Addi(int src1, int src2)
+	public Integer ADDI(int src1, int src2)
 	{
 		return src1 + src2;
 	}
