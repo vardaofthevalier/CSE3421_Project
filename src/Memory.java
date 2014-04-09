@@ -22,10 +22,12 @@ public class Memory {
 	
 	public void Store(int value, int data_address){
 		// Store the value at the given data address
+		memory_contents[data_address] = value;
 	}
 	
 	public void Reset(){
 		// Clear memory contents
+		Arrays.fill(memory_contents, null);
 	}
 	
 
