@@ -217,7 +217,7 @@ public class SAG_CPU {
 			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1110":
-			//do LOAD stuff
+			//do STORE stuff
 			src1 = temp.substring(4,8);
 			dest = temp.substring(8);
 			src1int = Integer.parseInt(src1, 2);
@@ -303,10 +303,11 @@ public class SAG_CPU {
 			break;
 		case "1101":
 			//do LOAD stuff
-			
+			GP_Registers[dest].Update(Main_Memory.Load(src1));
 			break;
 		case "1110":
-			//do LOAD stuff
+			//do STORE stuff
+			Main_Memory.Store(src1,dest);
 			break;
 		case "1111":
 			//do JUMP stuff
