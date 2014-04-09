@@ -15,7 +15,8 @@ public class Memory {
 	
 	//Methods
 	
-	public void Load(int instruction_address){
+	public int Load(int instruction_address){
+		return memory_contents[instruction_address];
 		// Load an instruction from instruction memory into program memory
 	}
 	
