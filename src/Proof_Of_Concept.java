@@ -77,24 +77,14 @@ public class Proof_Of_Concept extends JFrame implements ActionListener {
 		Query consult = new Query("consult", new Term[] {new Atom("sag_assembler.pro")});
 		consult.query();
 		
-		// Create an output stream for the command to send to the assembler
-		PipedOutputStream command = new PipedOutputStream();
-		
-		// Create an input stream for the assembler to read from
-		PipedInputStream input = new PipedInputStream();
-		
-		// Connect the streams
-		try {
-			command.connect(input);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		// Create a query to assemble the command entered by the user
-		Query assemble = new Query("assemble", new Term[] { new Atom(command), new Atom(input)});
+		Query assemble = new Query("assemble_command", new Term[] { new Atom(next_command) });
 		
 		// Run the query and get the output
+		
+		// Execute the assembled instructions
+		
+		// Check device states, and update the images appropriately
 		
 		
 	}
