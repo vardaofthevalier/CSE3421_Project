@@ -80,6 +80,8 @@ public class Proof_Of_Concept extends JFrame implements ActionListener {
 		// Create a query to assemble the command entered by the user
 		Query assemble = new Query("assemble_command", new Term[] { new Atom(next_command) });
 		
+		System.out.println(assemble);
+		
 		// Run the query and get the output
 		
 		// Execute the assembled instructions
