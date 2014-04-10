@@ -92,8 +92,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0010":
@@ -102,8 +102,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0011":
@@ -112,8 +112,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0100":
@@ -122,8 +122,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0101":
@@ -131,7 +131,7 @@ public class SAG_CPU {
 			src1 = temp.substring(4,8);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0110":
@@ -140,8 +140,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "0111":
@@ -150,8 +150,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1000":
@@ -160,8 +160,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1001":
@@ -172,8 +172,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), destint, 0, 0);
 			break;
 		case "1010":
@@ -184,8 +184,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), GP_Registers[src2int].getContents(), destint, 0, 0);
 			break;
 		case "1011":
@@ -194,8 +194,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), src2int, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1100":
@@ -204,8 +204,8 @@ public class SAG_CPU {
 			src2 = temp.substring(8,12);
 			dest = temp.substring(12);
 			src1int = Integer.parseInt(src1, 2);
-			src2int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			src2int = Integer.parseInt(src2, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), src2int, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1101":
@@ -213,7 +213,7 @@ public class SAG_CPU {
 			src1 = temp.substring(4,8);
 			dest = temp.substring(8);
 			src1int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1110":
@@ -221,7 +221,7 @@ public class SAG_CPU {
 			src1 = temp.substring(4,8);
 			dest = temp.substring(8);
 			src1int = Integer.parseInt(src1, 2);
-			destint = Integer.parseInt(src1, 2);
+			destint = Integer.parseInt(dest, 2);
 			Execute(opCodeString, GP_Registers[src1int].getContents(), 0, GP_Registers[destint].getContents(), 0, 0);
 			break;
 		case "1111":

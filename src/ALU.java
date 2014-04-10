@@ -74,6 +74,9 @@ public class ALU {
 	
 	public Integer SLTI(int src1, int imm)
 	{
-		return src1 << imm;
+		if(src1 < imm)
+			return 1;
+		else
+			return 0;
 	}
 }
